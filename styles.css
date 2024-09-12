@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=EB+Garamond:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000; 
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 4em;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-in-out forwards;
+}
+
+p {
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2.5s ease-in-out forwards;
+}
+
+p span {
+    color: #ff0000; /* Intensely bright red */
+    font-weight: 600;
+}
+
+/* Black Hole Effect */
+.blackhole {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 1), transparent 70%);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 100px 50px rgba(255, 0, 0, 0.9), 0px 0px 140px 80px rgba(255, 0, 0, 0.6);
+    animation: spin 10s infinite linear, pulse 3s infinite ease-in-out;
+}
+
+/* Blackhole animations */
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0px 0px 100px 50px rgba(255, 0, 0, 0.9), 0px 0px 140px 80px rgba(255, 0, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0px 0px 120px 60px rgba(255, 0, 0, 0.7), 0px 0px 160px 100px rgba(255, 0, 0, 0.4);
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+    .blackhole {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .blackhole {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    .blackhole {
+        width: 250px;
+        height: 250px;
+    }
+}
